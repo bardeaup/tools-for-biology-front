@@ -1,4 +1,11 @@
-
 .title--main{
   font-family: 'Rancho', sans-serif;
+  display: inline-block;
+}
+
+
+.flex-spacer{
+  display: inline-block;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
 }
