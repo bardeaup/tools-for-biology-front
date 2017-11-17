@@ -8,7 +8,6 @@ import {Component} from "@angular/core";
   selector : 'login',
   templateUrl: './login.html',
   styleUrls: ['./login.component.css']
-
 })
 
 export class LoginComponent{}
