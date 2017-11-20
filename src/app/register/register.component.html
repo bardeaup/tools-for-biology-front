@@ -1,19 +1,33 @@
 <mat-card class="block-register">
   <div class="register-title">Register</div>
-  <div class="block-register_form">
+
+  <form #f="ngForm"
+        class="block-register_form">
     <mat-form-field class="register-element">
-      <input matInput placeholder="Username" required>
+      <input matInput type="text" placeholder="Username"
+             required
+             name="username" ngModel username>
     </mat-form-field>
     <mat-form-field class="register-element">
-      <input matInput placeholder="Password" required>
+      <input matInput placeholder="email"
+             required
+             name="email" ngModel email>
     </mat-form-field>
     <mat-form-field class="register-element">
-      <input matInput placeholder="Confirm Password" required>
+      <input matInput placeholder="Password" type="password"
+             required
+             name="password" ngModel password>
     </mat-form-field>
-  </div>
-  <div>
-    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
-    <button mat-raised-button  color="warn">Register</button>
-    <button mat-button routerLink="/" routerLinkActive="active" color="primary">Cancel</button>
-  </div>
+    <mat-form-field class="register-element">
+      <input matInput placeholder="Confirm Password" type="password"
+             required
+             name="confirm_password" ngModel confirm-password>
+    </mat-form-field>
+
+    <div>
+      <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+      <button mat-raised-button color="warn" type="submit" (ngSubmit)="register(f.value)">Register</button>
+      <button mat-button routerLink="/" routerLinkActive="active" color="primary">Cancel</button>
+    </div>
+  </form>
 </mat-card>

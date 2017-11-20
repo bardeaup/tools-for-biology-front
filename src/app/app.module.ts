@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, EmailValidator} from '@angular/forms';
 
 
 import {LoginComponent} from './login/login.component';
@@ -32,7 +32,8 @@ import { RegisterComponent } from './register/register.component';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EmailValidator
   ],
   providers: [],
   bootstrap: [AppComponent]
