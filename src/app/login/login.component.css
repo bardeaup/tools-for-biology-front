@@ -5,10 +5,18 @@
   margin-right: auto;
   margin-top: 5%;
 }
-
+.block-login_form{
+  padding-bottom: 10%;
+}
 .login-element{
   width: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.login-title{
+  font-family: Dosis;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  text-align : center;
 }

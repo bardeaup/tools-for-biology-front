@@ -1,9 +1,9 @@
-<mat-sidenav-container fullscreen>
+<mat-sidenav-container>
   <mat-toolbar>
     <span class="title--main">Tools for biologist</span>
     <span class="flex-spacer"></span>
-    <button mat-button>Login <i class="material-icons">person_outline</i></button>
+    <button mat-button routerLink="/login" routerLinkActive="active">Login<i class="material-icons">person_outline</i></button>
   </mat-toolbar>
 </mat-sidenav-container>
-<login></login>
 
+<router-outlet></router-outlet>

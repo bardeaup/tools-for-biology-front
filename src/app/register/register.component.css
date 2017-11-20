@@ -1,0 +1,21 @@
+.block-register{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+.block-register_form{
+  padding-bottom: 10%;
+}
+.register-element{
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.register-title{
+  font-family: Dosis;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  text-align : center;
+}
