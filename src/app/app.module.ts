@@ -8,9 +8,19 @@ import {LoginComponent} from './login/login.component';
 import {AppComponent} from './app.component';
 import {MaterialModule} from "./material.service";
 import {HomeComponent} from './home/home.component';
-import {routing}        from './app.routing';
 import { RegisterComponent } from './register/register.component';
+import {AppService} from "./service/app.service";
+import {HttpModule} from "@angular/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
+import {AppRouter} from "./app.routing";
+import {AuthService} from "./service/auth.service";
+import {TokenStorage} from "./service/token.storage";
+import {Interceptor} from "./service/app.interceptor";
+import {JwtModule} from "@auth0/angular-jwt";
 
+export function tokenGetter() {
+  return sessionStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -25,7 +35,14 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    routing
+    HttpClientModule,
+    AppRouter,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:9000']
+      }
+    })
   ],
   exports: [
     MaterialModule,
@@ -35,9 +52,13 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     EmailValidator
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppService, AuthService, TokenStorage],
+  // , { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }
+bootstrap: [AppComponent]
 })
+
+
 
 export class AppModule {
 }
+

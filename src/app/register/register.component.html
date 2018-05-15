@@ -1,8 +1,7 @@
 <mat-card class="block-register">
   <div class="register-title">Register</div>
 
-  <form #f="ngForm"
-        class="block-register_form">
+  <form #f="ngForm" class="block-register_form">
     <mat-form-field class="register-element">
       <input matInput type="text" placeholder="Username"
              required
@@ -26,7 +25,7 @@
 
     <div>
       <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
-      <button mat-raised-button color="warn" type="submit" (ngSubmit)="register(f.value)">Register</button>
+      <button mat-raised-button color="warn" type="submit" (click)="login(f.value)">Register</button>
       <button mat-button routerLink="/" routerLinkActive="active" color="primary">Cancel</button>
     </div>
   </form>

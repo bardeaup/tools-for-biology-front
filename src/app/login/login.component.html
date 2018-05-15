@@ -1,18 +1,28 @@
-
 <mat-card class="block-login">
   <div class="login-title">Login</div>
-  <div class="block-login_form">
-    <mat-form-field class="login-element">
-      <input matInput placeholder="Username" required>
-    </mat-form-field>
-    <mat-form-field class="login-element">
-      <input matInput placeholder="Password" required>
-    </mat-form-field>
-  </div>
-  <div>
-    <button mat-raised-button>Login</button>
-    <button mat-button routerLink="/register" routerLinkActive="active" color="warn">Register</button>
-    <button mat-button routerLink="/" routerLinkActive="active" color="primary">Cancel</button>
-  </div>
+
+  <form #f="ngForm">
+    <div class="block-login_form">
+      <mat-form-field class="login-element">
+        <input matInput placeholder="Username" required
+        name="username" ngModel username>
+      </mat-form-field>
+      <mat-form-field class="login-element">
+        <input matInput placeholder="Password" required
+        name="password" ngModel password>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button
+              type="submit" (click)="login(f.value)">Login</button>
+      <button mat-button routerLink="/register"
+              routerLinkActive="active"
+              color="warn">Register</button>
+      <button mat-button routerLink="/"
+              routerLinkActive="active"
+              color="primary" >Cancel</button>
+    </div>
+  </form>
 </mat-card>
 
