@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(public jwtHelper: JwtHelperService) {}
 
   ngOnInit() {
-    console.log('Pascal is token exired',this.jwtHelper.isTokenExpired()); // true or false
-    console.log('Pascal token exired date',this.jwtHelper.getTokenExpirationDate());
-    console.log('pascal decode tokent',this.jwtHelper.decodeToken()); // token
+
   }
 
 }

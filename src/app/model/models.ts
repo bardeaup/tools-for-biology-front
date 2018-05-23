@@ -8,3 +8,8 @@ export interface User {
   password: string;
   confirm_password?: string;
 }
+
+export class LoggedUser {
+  username?: string;
+  isLogged: boolean;
+}

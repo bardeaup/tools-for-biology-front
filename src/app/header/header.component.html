@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+  <mat-toolbar>
+    <span class="title--main">Tools for biologist</span>
+    <div *ngIf="actualUser"> - Bonjour {{ actualUser.username}}</div>
+    <span class="flex-spacer"></span>
+    <button *ngIf="!actualUser" mat-button routerLink="/login" routerLinkActive="active">Login
+      <i  class="material-icons">person_outline</i>
+    </button>
+    <button *ngIf="actualUser" mat-button (click)="logout()">Logout
+      <i  class="material-icons">person_online</i>
+    </button>
+  </mat-toolbar>
+</mat-sidenav-container>

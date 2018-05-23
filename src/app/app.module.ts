@@ -17,6 +17,7 @@ import {AuthService} from "./service/auth.service";
 import {TokenStorage} from "./service/token.storage";
 import {Interceptor} from "./service/app.interceptor";
 import {JwtModule} from "@auth0/angular-jwt";
+import { HeaderComponent } from './header/header.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem('token');
@@ -27,7 +28,8 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
