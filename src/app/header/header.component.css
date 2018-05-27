@@ -10,3 +10,7 @@
   -webkit-box-flex: 1;
   flex: 1 1 auto;
 }
+
+.icon__logout{
+  max-width: 15px;
+}

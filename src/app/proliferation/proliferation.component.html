@@ -1,0 +1,44 @@
+<mat-card class="block-proliferation">
+  <h1>Prolifération cellulaire</h1>
+  <form #f="ngForm">
+    <div class="experiment__definition flex flex--spaceBetween">
+      <mat-form-field >
+        <input type="text" matInput placeholder="Titre de l'expérience"
+               name="title" ngModel required>
+      </mat-form-field>
+
+      <mat-form-field >
+        <input type="text" matInput placeholder="Lignée cellulaire"
+               name="cellLine" ngModel required>
+      </mat-form-field>
+      <mat-form-field >
+        <input type="text" matInput placeholder="Condition"
+               name="condition" ngModel required>
+      </mat-form-field>
+      <button mat-button matTooltip="Ajoutez un compte cellulaire."
+              (click)="showProliferationFormField()">
+        <i class="material-icons" *ngIf="!isProliferationFormFieldDisplayed">
+          add_circle_outline
+        </i>
+        <i class="material-icons" *ngIf="isProliferationFormFieldDisplayed">
+          remove_circle_outline
+        </i>
+      </button>
+    </div>
+    <div [hidden]="!isProliferationFormFieldDisplayed"
+          class="experiment ">
+      <mat-form-field class="padding__right--9">
+        <input type="number" matInput placeholder="Quantité de cellules"
+               name="proliferationExperiments.period.count" ngModel required>
+      </mat-form-field>
+
+      <mat-form-field >
+        <input type="datetime-local" matInput placeholder="Jour et heure"
+               name="proliferationExperiments.period.date" ngModel required>
+      </mat-form-field>
+
+    </div>
+  </form>
+  <button mat-raised-button
+          type="submit" (click)="saveProliferationExperiment(f.value)">Enregistrer</button>
+</mat-card>

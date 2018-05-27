@@ -4,6 +4,7 @@ import {Observable, Subject} from "rxjs";
 import {User, LoggedUser} from "../model/models";
 import { map } from 'rxjs/operators';
 import {JwtHelperService} from "@auth0/angular-jwt";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
@@ -47,9 +48,8 @@ export class AuthService {
 
   }
 
-  logout(): void {
+  logout() {
     // clear token remove user from local storage to log user out
-    console.log("logouuuououout");
     sessionStorage.removeItem('token');
   }
 

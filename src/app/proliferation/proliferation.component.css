@@ -1,0 +1,30 @@
+.block-proliferation{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.experiment__definition{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experiment{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex{
+  display: flex;
+}
+.flex--spaceBetween{
+  justify-content: space-between;
+
+}
+
+.padding__right--9{
+  padding-right: 9%;
+}
+
